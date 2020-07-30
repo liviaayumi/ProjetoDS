@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="../../../css/bootstrap.css">
 <link rel="stylesheet" href="../../../libs/MaterialDesign/css/materialdesignicons.css">
+<link rel="stylesheet" href="form-clientes.html">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand text-white">appAulaDS</a>
@@ -13,13 +14,13 @@
                   <i class="mdi mdi-plus-circle"></i> Cadastros
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="src/categorias/visao/list-categoria.html"><i class="mdi mdi-ballot"></i> Categorias</a>
+                  <a class="dropdown-item" href="src/clientes/visao/list-clientes.html"><i class="mdi mdi-ballot"></i> Categorias</a>
                   <a class="dropdown-item" href="#"><i class="mdi mdi-account"></i> Clientes</a>
                   <a class="dropdown-item" href="#"><i class="mdi mdi-card-bulleted"></i> Formas de Pagamento</a>
                   <a class="dropdown-item" href="#"><i class="mdi-account"></i> Produtos</a>
                 </div>
               </li>
-        </ul>
+        </ul> 
     </div>
 </nav>
 
@@ -30,7 +31,7 @@
                 <div class="card-header">
                     <div class="card-title row">
                         <div class="col-12 col-md-9">
-                            <h4 class="text-dark">Gerenciar Categorias</h4>
+                            <h4 class="text-dark">Gerenciar Clientes</h4>
                         </div>
                         <div class="col-12 col-md-3">
                             <button class="btn btn-dark btn-new btn-block"><i class="mdi mdi-plus-circle"></i> Adicionar</button>
@@ -39,14 +40,16 @@
                 </div> 
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover" id="table-categoria">
+                        <table class="table table-hover" id="table-cliente">
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col" class="text-center">Codigo</th>
-                                    <th scope="col" class="text-center">Categoria</th>
-                                    <th scope="col" class="text-center">Atualização</th>
-                                    <th scope="col" class="text-center">Status</th>
-                                    <th scope="col" class="text-center">Ações</th>
+                                    <th scope="col" class="text-center">Nome</th>
+                                    <th scope="col" class="text-center">Email</th>
+                                    <th scope="col" class="text-center">Telefone</th>
+                                    <th scope="col" class="text-center">Ativo</th>
+                                    <th scope="col" class="text-center">Data</th>
+                                    <th scope="col" class="text-center">Acoes</th>
                                 </tr>
                             </thead>
                         </table>
@@ -56,27 +59,55 @@
         </div>
     </div>
     
-    <div id="modal-categoria" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div id="modal-cliente" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
+
                 <div class="modal-header">
-                    <h5 class="modal-title" id="my-modal-title">Title</h5>
+                    <h5 class="modal-title" id="my-modal-title">Cadastro de Cliente</h5>
                     <button class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span>&times;</span>
                     </button>
                 </div>
+
                 <div class="modal-body">
-                    <p>Content</p>
+                    <form id="form-cliente">
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text" name="nome" id="nome" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" name="nome" id="emais" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefone</label>
+                            <input type="text" name="nome" id="telefone" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <input type="checkbox" class="form-check-input" checked id="ativo" name="ativo">
+                            <label class="form-check-label" for="exampleCheck1">Ativo</label>
+                        </div>
+                        <div class="form-group row align-items-end">
+                            <div class="col-12 col-md-9">
+                                <label>Data</label>
+                                <input type="datetime" name="dataagora" id="dataagora" readonly class="form-control">
+                            </div>
+                        </div>
+                        <input type="hidden" name="idcliente" id="idcliente">
+                    </form> 
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="mdi mdi-close-circle"></i> Fechar</button>
                     <button type="button" class="btn btn-primary btn-save"><i class="mdi mdi-content-save"></i> Salvar mudanças</button>
                 </div>
+
             </div>
         </div>
     </div>
     
-    <script src="src/categorias/controle/new-categoria.js"></script>
-    <script src="src/categorias/controle/create-categoria.js"></script>
-    <script src="src/categorias/controle/list-categoria.js"></script>
+    <script src="src/clientes/controle/new-clientes.js"></script>
+    <script src="src/clientes/controle/create-clientes.js"></script>
+    <script src="src/clientes/controle/list-clientes.js"></script>
 </div>
